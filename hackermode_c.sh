@@ -7,11 +7,11 @@ function modify()
      case $value in 
      a)
      read -p 'Enter contents to append: ' content 
-     echo $content >> $file 
+     echo $content >> /home/$USER/Vaccines/$file 
      ;; 
      r)
      read -p 'Enter contents: ' content 
-     echo $content > $file 
+     echo $content > /home/$USER/Vaccines/$file 
      ;;
      *)
      echo  invalid option 
@@ -29,9 +29,9 @@ do
     case $option in 
     c)
     read -p"Enter filename " file 
-    touch $file 
+    touch /home/$USER/Vaccines/$file 
     read -p"Enter contents " content 
-    echo $content >> $file
+    echo $content >> /home/$USER/Vaccines/$file 
     ;;
     m)
     modify 
