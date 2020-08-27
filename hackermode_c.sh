@@ -28,10 +28,17 @@ select option in $opts
 do 
 case $option in 
 create)
-read -p"Enter filename " file 
-touch /home/$USER/Vaccines/$file 
-read -p"Enter contents " content 
-echo $content >> /home/$USER/Vaccines/$file 
+x=1
+while true
+do 
+if [! -e /home/$USER/Vaccines/symptoms_${x}.txt ]
+then touch /home/$USER/Vaccines/symptoms_${x}.txt
+     read -p"Enter contents " content 
+     echo $content >> /home/$USER/symptoms_${x}.txt
+     break 
+fi
+x=$((x+1))
+done
 ;;
 modify)
 modify 
