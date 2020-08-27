@@ -15,10 +15,10 @@ fi
 while true
 do
 
-if [ -e /home/${name}_1/Symptoms/symptoms_$i.txt ]
+if [ -e /home/${name}_1/Symptoms/symptom_$i.txt ]
 then
 echo $symptoms >> /home/$doc/Request/$name.txt
-echo $symptoms >> /home/${name}_1/Symptoms/symptoms_$i.txt
+echo $symptoms >> /home/${name}_1/Symptoms/symptom_$i.txt
 break
 fi
 i=$((i+1))
@@ -33,10 +33,10 @@ exit
 fi
 while true
 do 
-if [ -e /home/${name}_2/Symptoms/symptoms_$i.txt ]
+if [ -e /home/${name}_2/Symptoms/symptom_$i.txt ]
 then 
 echo $symptoms >> /home/$doc/Request/$name.txt
-echo $symptoms >> /home/${name}_2/Symptoms/symptoms_$i.txt
+echo $symptoms >> /home/${name}_2/Symptoms/symptom_$i.txt
 break
 fi
 i=$((i+1))

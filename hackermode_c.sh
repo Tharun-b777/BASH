@@ -31,10 +31,11 @@ create)
 x=1
 while true
 do 
-if [! -e /home/$USER/Vaccines/symptoms_${x}.txt ]
-then touch /home/$USER/Vaccines/symptoms_${x}.txt
+if [! -e /home/$USER/Vaccines/vaccine_${x}.txt ]
+then 
+     touch /home/$USER/Vaccines/vaccine_${x}.txt
      read -p"Enter contents " content 
-     echo $content >> /home/$USER/symptoms_${x}.txt
+     echo $content >> /home/$USER/Vaccines/vaccine_${x}.txt
      break 
 fi
 x=$((x+1))

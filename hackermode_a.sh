@@ -7,9 +7,9 @@ i=1
 if [ -d /home/$name/ ]; then
     while true
     do 
-    if [ -e /home/$name/Symptoms/symptom_$i.txt ]
+    if [ -e /home/$name/Symptoms/symptom_${i}.txt ]
     then
-            echo $symptoms >> /home/$name/Symptoms/symptom_1.txt
+            echo $symptoms >> /home/$name/Symptoms/symptom_${i}.txt
             break
     fi
     i=$((i+1))
