@@ -4,7 +4,8 @@
 #  echo $name
 #  echo $symptoms
 i=1
-if [ -d /home/$name/ ]; then
+if [ -d /home/$name/ ] 
+then
     while true
     do 
     if [ -e /home/$name/Symptoms/symptom_${i}.txt ]

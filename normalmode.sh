@@ -3,7 +3,7 @@
 useradd -m corona
 useradd -m doc1
 useradd -m doc2
-for i in {1..5}:
+for i in {1..5}
 do
 	useradd -m p${i}_1
 	useradd -m p${i}_2
@@ -11,7 +11,7 @@ done
 #creating directories and assigning groups
 mkdir /home/doc1/Vaccines /home/doc1/Symptoms /home/doc1/Requests
 mkdir /home/doc2/Vaccines /home/doc2/Symptoms /home/doc2/Requests
-for i in {1..5}:
+for i in {1..5}
 do
     mkdir /home/p${i}_1/Symptoms
 	usermod -aG p${i}_1 corona
@@ -24,7 +24,7 @@ done
 usermod -aG doc1 corona
 usermod -aG doc2 corona
 #creating files and assigning groups
-for i in {1..5}:
+for i in {1..5}
 do
 	#creating request files for each patients
 	touch /home/doc1/Requests/p${i}.txt
@@ -39,7 +39,7 @@ do
 
 done
 #assigning permissions
-for i in {1..5}:
+for i in {1..5}
 do	
 	
 	chmod -R 770 /home/p${i}_1
