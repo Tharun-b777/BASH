@@ -2,48 +2,50 @@
 function modify() 
 {
      clear 
-     read -p "Enter name of file to modify: " file 
-     read -p "Do you want to append (a) or rewrite (r) the contents: " value 
-     case $value in 
-     a)
+     opts=$(ls /home/$USER/Vaccines/*)
+     select value in $opts 
+     do
+     read -p "Do you want to append(a) or rewrite contents(r) or exit (any character) "   pref
+     case $pref in 
+     a|[aA]ppend)
      read -p 'Enter contents to append: ' content 
-     echo $content >> /home/$USER/Vaccines/$file 
+     echo $content >> /home/$USER/Vaccines/$value 
      ;; 
-     r)
+     r|[rR]ewrite)
      read -p 'Enter contents: ' content 
-     echo $content > /home/$USER/Vaccines/$file 
+     echo $content > /home/$USER/Vaccines/$value 
      ;;
      *)
-     echo  invalid option 
+     echo  exiting 
+     break
      ;;
      esac 
      echo "modified file: "
-     cat $file
+     cat $value
+     done
 }
-x=0
-while [ $x = 0 ]
-do
-    clear
-    echo "Do you want to create new file (c) or modify existing file (m) ??(e:exit)"
-    read option 
-    case $option in 
-    c)
-    read -p"Enter filename " file 
-    touch /home/$USER/Vaccines/$file 
-    read -p"Enter contents " content 
-    echo $content >> /home/$USER/Vaccines/$file 
-    ;;
-    m)
-    modify 
-    sleep 2
-    ;;
-    e)
-    exit 
-    ;;
-    *)
-    echo invalid option
-    sleep 1
-    ;;
-   esac 
 
+options ="modify create exit"
+echo "Do you want to "
+select option in $options 
+do 
+case $option in 
+c|[Cc]reate|2)
+read -p"Enter filename " file 
+touch /home/$USER/Vaccines/$file 
+read -p"Enter contents " content 
+echo $content >> /home/$USER/Vaccines/$file 
+;;
+m|[Mm]odify|1)
+modify 
+sleep 2
+;;
+e|[Ee]xit|3)
+exit 
+;;
+*)
+echo invalid option
+sleep 1
+;;
+esac 
 done
