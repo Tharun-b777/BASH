@@ -1,51 +1,46 @@
 #!/bin/bash
 function modify() 
-{
-     clear 
-     opts=$(ls /home/$USER/Vaccines/*)
-     select value in $opts 
+{ 
+     files=$(ls /home/$USER/Vaccines/*)
+     select file in $files 
      do
      read -p "Do you want to append(a) or rewrite contents(r) or exit (any character) "   pref
      case $pref in 
      a|[aA]ppend)
      read -p 'Enter contents to append: ' content 
-     echo $content >> /home/$USER/Vaccines/$value 
+     echo $content >> /home/$USER/Vaccines/$file 
      ;; 
      r|[rR]ewrite)
      read -p 'Enter contents: ' content 
-     echo $content > /home/$USER/Vaccines/$value 
+     echo $content > /home/$USER/Vaccines/$file 
      ;;
      *)
      echo  exiting 
      break
      ;;
      esac 
-     echo "modified file: "
-     cat $value
      done
 }
 
-options ="modify create exit"
+opts="modify create exit"
 echo "Do you want to "
-select option in $options 
+select option in $opts 
 do 
 case $option in 
-c|[Cc]reate|2)
+create)
 read -p"Enter filename " file 
 touch /home/$USER/Vaccines/$file 
 read -p"Enter contents " content 
 echo $content >> /home/$USER/Vaccines/$file 
 ;;
-m|[Mm]odify|1)
+modify)
 modify 
-sleep 2
 ;;
-e|[Ee]xit|3)
+exit)
 exit 
 ;;
 *)
 echo invalid option
-sleep 1
 ;;
 esac 
 done
