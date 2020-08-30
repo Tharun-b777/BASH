@@ -10,7 +10,9 @@ if [ "$doc" == "doc1" ]
 then
 passwd ${name}_1
 su ${name}_1
-else 
+elif [ "$doc" == "doc2" ] 
 passwd ${name}_2
 su ${name}_2
+else 
+echo Invalid
 fi

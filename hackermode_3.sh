@@ -26,6 +26,7 @@ do
 if [ ! -e /home/p${j}_1/Symptoms/symptom_$l.txt ] 
 then
 echo "symptom$i" >> /home/p${j}_1/Symptoms/symptom_$l.txt
+break
 fi
 l=$((l+1))
 done
@@ -37,6 +38,7 @@ do
 if [ ! -e /home/p${j}_2/Symptoms/symptom_$i.txt ] 
 then
 echo "severe symptom$i" >> /home/p${j}_2/Symptoms/symptom_$i.txt
+break
 fi
 i=$((i+1))
 done
