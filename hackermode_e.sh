@@ -1,6 +1,11 @@
 #!/bin/bash
 read -p "Enter patient name " name 
 read -p "Enter symptomfile to be deleted eg(symptom_1.txt) " file 
+if [ ! -d /home/$name ]
+then 
+echo "Patient dead "
+exit
+fi 
 if [ "$USER" == "doc1" ]
 then 
 # echo $file

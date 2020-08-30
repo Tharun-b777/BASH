@@ -2,7 +2,7 @@
 read -p "Enter your name " name 
 if [ "$name" == "doc1" ] || [ "$name" == "doc2" ] || [ "$name" == "corona" ]
 then
-sudo passwd $name 
+passwd $name 
 su $name
 fi
 read -p "Enter doc name (doc1/doc2) " doc 

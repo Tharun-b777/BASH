@@ -5,16 +5,10 @@ read -p "enter doctor name(doc1/doc2) " doc
 
 i=1
  
-if [ "$doc" == "doc1" ]
-then
-if [ ! -d /home/${name}_1 ]
-then
-echo "Patient dead"
-exit 
-fi
+
+if [ "$doc" == "doc1" ] && [ -d /home/$doc ]
 while true
 do
-
 if [ -e /home/${name}_1/Symptoms/symptom_$i.txt ]
 then
 echo $symptoms >> /home/$doc/Request/$name.txt
@@ -24,15 +18,8 @@ fi
 i=$((i+1))
 done
 
-else
-i=1
-if [ ! -d /home/${name}_2 ]
-then 
-echo "Patient dead"
-exit
-fi
+elif [ "$doc" == "doc2" ] && [ -d /home/$doc ]
 while true
-do 
 if [ -e /home/${name}_2/Symptoms/symptom_$i.txt ]
 then 
 echo $symptoms >> /home/$doc/Request/$name.txt
@@ -41,4 +28,7 @@ break
 fi
 i=$((i+1))
 done
+
+else 
+echo  Invalid credentials
 fi
