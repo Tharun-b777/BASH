@@ -2,8 +2,10 @@
 function modify() 
 { 
      files=$(ls /home/$USER/Vaccines/*)
+     #listing all files in vaccines directory
      select file in $files 
      do
+     #asking preference for append/overwrite existing contents
      read -p "Do you want to append(a) or rewrite contents(r) or exit (any character) "   pref
      case $pref in 
      a|[aA]ppend)
@@ -24,9 +26,11 @@ function modify()
 
 opts="modify create exit"
 echo "Do you want to "
+#choose opts for modify create
 select option in $opts 
 do 
 case $option in 
+#create new vaccine file
 create)
 x=1
 while true
