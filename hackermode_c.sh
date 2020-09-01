@@ -23,15 +23,8 @@ function modify()
      esac 
      done
 }
-
-opts="modify create exit"
-echo "Do you want to "
-#choose opts for modify create
-select option in $opts 
-do 
-case $option in 
-#create new vaccine file
-create)
+function create() 
+{
 x=1
 while true
 do 
@@ -44,6 +37,16 @@ then
 fi
 x=$((x+1))
 done
+}
+opts="modify create exit"
+echo "Do you want to "
+#choose opts for modify create
+select option in $opts 
+do 
+case $option in 
+#create new vaccine file
+create)
+create
 ;;
 modify)
 modify 
