@@ -51,5 +51,5 @@ i=$((i+1))
 done
 
 else 
-echo  Invalid credentials
+echo  Invalid 
 fi

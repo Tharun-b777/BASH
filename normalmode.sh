@@ -1,5 +1,5 @@
 #!/bin/bash
-#creting users
+#creating users
 useradd -m corona
 useradd -m doc1
 useradd -m doc2

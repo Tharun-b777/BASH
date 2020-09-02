@@ -1,7 +1,7 @@
 #!/bin/bash 
 #script for virus to create symptoms files
- read -p "Enter citizen name " name
- read -p "Enter symptoms "  symptoms
+read -p "Enter citizen name " name
+read -p "Enter symptoms "  symptoms
 i=1
 #check if the file exist
 if [ -d /home/$name/ ] 
