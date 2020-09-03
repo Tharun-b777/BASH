@@ -13,6 +13,8 @@ function modify()
      echo $content >> /home/$USER/Vaccines/$file 
      ;; 
      r|[rR]ewrite)
+     #if the user requiers more option below line can be uncommented 
+     #vim /home/$USER/Vaccines/$file 
      read -p 'Enter contents: ' content 
      echo $content > /home/$USER/Vaccines/$file 
      ;;

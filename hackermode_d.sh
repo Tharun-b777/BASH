@@ -14,14 +14,14 @@ do
 #check for any symptom file not existing
 if [ ! -e /home/${name}_1/Symptoms/symptom*.txt ]
 then 
-echo $symptoms >> /home/$doc/Request/$name.txt
+echo $symptoms >> /home/$doc/Requests/$name.txt
 echo $symptoms >> /home/${name}_1/Symptoms/symptom_1.txt
 break
 fi 
 #check for symptom file exists
 if [ -e /home/${name}_1/Symptoms/symptom_$i.txt ]
 then
-echo $symptoms >> /home/$doc/Request/$name.txt
+echo $symptoms >> /home/$doc/Requests/$name.txt
 echo $symptoms >> /home/${name}_1/Symptoms/symptom_$i.txt
 break
 fi
@@ -36,14 +36,14 @@ do
 #check for any symptom file not existing
 if [ ! -e /home/${name}_2/Symptoms/symptom*.txt ]
 then 
-echo $symptoms >> /home/$doc/Request/$name.txt
+echo $symptoms >> /home/$doc/Requests/$name.txt
 echo $symptoms >> /home/${name}_2/Symptoms/symptom_1.txt
 break
 fi
 #check for symptom file exists
 if [ -e /home/${name}_2/Symptoms/symptom_$i.txt ]
 then 
-echo $symptoms >> /home/$doc/Request/$name.txt
+echo $symptoms >> /home/$doc/Requests/$name.txt
 echo $symptoms >> /home/${name}_2/Symptoms/symptom_$i.txt
 break
 fi
